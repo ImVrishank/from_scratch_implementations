@@ -2,35 +2,13 @@
 
 import numpy as np
 
-
-# for testing purposes i am going to use a paramaters numpy array as such:
-class test1:
-    def __init__(self):
-        self.parameters = np.array([[0.0],
-                                    [0.0],
-                                    [0.0],
-                                    [0.0]])
-        self.n = 4
-        self.features = np.array([
-                    [1200,1,1,2],
-                    [1500,2,0,2],
-                    [1700,5,0,4],
-                    [1100,3,1,6],
-                    [1300,3,0,2]])
-        
-        self.training_examples = 5
-
-        self.lables  = np.array([[100],
-                            [200],
-                            [300],
-                            [400],
-                            [300]])
-        
-
-
-
-
 def SGD(learning_rate, parameters, features, lables): 
+    # learning rate must be a float, 
+    # parameters must be an (n x 1) numpy array,
+    # features must be an (m x n) numpy array, 
+    # lables must be an (m x 1) numpy array
+    # where n is the number of features and m is the number of training examples
+
 
     training_examples = features.shape[0]
 
@@ -52,9 +30,7 @@ def SGD(learning_rate, parameters, features, lables):
 
             #updating the parameter
             parameter = parameter - learning_rate*(hypothesis_i - lable_i)*x_j
-
             #uploading the changed parameter to the parameter matrix
-            
             parameters[j][0] = parameter
 
         
@@ -71,6 +47,3 @@ def SGD(learning_rate, parameters, features, lables):
         
 
 
-test = test1()
-
-print(SGD(learning_rate = 0.01,parameters = test.parameters, features = test.features, lables = test.lables))
