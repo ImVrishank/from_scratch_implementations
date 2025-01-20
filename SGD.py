@@ -1,8 +1,9 @@
-#this is a simple implementation of the stochastic gradient descent algorithm for linear regression from scratch
+#this is a simple implementation of the stochastic gradient descent algorithm from scratch
 
 import numpy as np
 
-def SGD(learning_rate, parameters, features, lables): 
+def SGD(learning_rate, parameters, features, lables, loss_fn): 
+    # takes in learning_rate, parameters, features, lables and gives out updated paramters
     # learning rate must be a float, 
     # parameters must be an (n x 1) numpy array,
     # features must be an (m x n) numpy array, 
@@ -29,8 +30,7 @@ def SGD(learning_rate, parameters, features, lables):
             x_j = x_i[0][j]
 
             #updating the parameter
-            #parameter = parameter - learning_rate*(hypothesis_i - lable_i)*x_j
-            parameter = parameter - learning_rate*differential_of_loss(loss_fn="MSE", hypothesis_i=hypothesis_i, lable_i=lable_i, x_j=x_j)
+            parameter = parameter - learning_rate*differential_of_loss(loss_fn=loss_fn, hypothesis_i=hypothesis_i, lable_i=lable_i, x_j=x_j)
             #uploading the changed parameter to the parameter matrix
             parameters[j][0] = parameter
 
@@ -39,8 +39,9 @@ def SGD(learning_rate, parameters, features, lables):
 
 
 def differential_of_loss(loss_fn, hypothesis_i = None, lable_i = None, x_j = None, weight_i = None):
-    #loss_fn is the type of loss function we are using, it is a string:
-    #could be MSE (mean square error), LOWESS (used in locally weighted regression)
+    # loss_fn is the type of loss function we are using, it is input as a string:
+    # could be MSE (mean square error), 
+    # LOWESS (used in locally weighted regression)
 
 
     if loss_fn == "MSE":
