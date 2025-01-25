@@ -6,10 +6,10 @@
 import numpy as np
 
 def gradient_ascent(features, lables, learning_rate, parameters):
-    ## takes in features, lables, learnig rate and paramaters and updates parameters
+    ## takes in features, lables, learnig rate and paramaters and updates and returns parameters
 
     # learning rate must be a float
-    # parameters must be an (n x 1) numpy array
+    # parameters must be an (n x 1) numpy array 
     # features must be an (m x n) numpy array, 
     # lables must be an (m x 1) numpy array
     # where n is the number of features and m is the number of training examples
@@ -36,5 +36,5 @@ def gradient_ascent(features, lables, learning_rate, parameters):
 
         parameters[j][0] = parameters
 
-
+    return parameters
         
