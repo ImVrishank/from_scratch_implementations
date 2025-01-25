@@ -31,4 +31,12 @@ def gradient_ascent(features, lables, learning_rate, parameters):
         
 
     return parameters
+
+
+def logistic_regression(features, lables, learning_rate, query_features):
+    parameters = np.zeros(features.shape[1], 1)
+
+    parameters = gradient_ascent(features=features, lables=lables, learning_rate=learning_rate, parameters=parameters)
+
+    return np.dot(query_features, parameters).flatten()
         
