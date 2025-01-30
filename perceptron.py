@@ -6,7 +6,7 @@ import numpy as np
 ### perceptron(x) returns 1 if x >= 0 and 0 if x < 0
 ### the equation to update the parameters is: theta_j = theta_j + learning_rate[summation from i = 0 to i = M({y_i - hypothesis(x_i)} * x_i_j )]
 
-def perceptron(X, Y, learning_rate):
+def perceptron(X, Y, learning_rate, query_features):
     
     theta = np.zeros((X.shape[1], 1)) # the parameters of model, initially all zeroes.
 
@@ -20,6 +20,9 @@ def perceptron(X, Y, learning_rate):
             x_i_j = x_i[1,j] # the jth value of the features matrix of the ith training example
             theta[j,1] += learning_rate*(y_i - hypo_i)*x_i_j # updating jth parameter of parameter matrix
 
-    return theta
+    # paramters are now calculated
+    
+    # output 
+    return np.dot(query_features, theta).flatten()
 
             
