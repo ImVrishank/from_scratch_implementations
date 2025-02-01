@@ -90,6 +90,7 @@ def softmax_regression_method_2(X, Y, learning_rate, query_features):
     """
 
     this is the implementation of method 2:
+    instead of having the lables as a one hot vector, this method takes in lables as a count value {0, 1, 2 ..., k}
 
     """
 
