@@ -50,7 +50,7 @@ def softmax_regression_method_1(X, Y, learning_rate, query_features):
     y_hat(1 x k) is a 1D array containing the prediction for ith example 
     y_given(1 x k) is the 1D array of the ith example
 
-    predictions(1 x k) is the vector of probabilites each poiniting to a certain class
+    predictions(1 x k) is the vector of probabilites each poiniting to a certain class takeing query_features as input
     
     """
 
