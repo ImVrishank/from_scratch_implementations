@@ -1,6 +1,20 @@
 import numpy as np
 
-### here, i implement the newtons method to update parameters as an alternative to gradient descent
+""" 
+here i imlpement the newton's model of optimization of paramters as an alternative to SGD from scratch. 
+
+gradient function: returns the gradient matrix of the log likelihood function
+
+hessian function: returns the hessian matrix of the log likelihood function
+
+here is the derivation to the logic for calculating gradient matrix: 
+https://github.com/ImVrishank/from_scratch_implementations/tree/main/images/newton's%20model/gradient%20of%20log%20likelihood
+
+here is the derivaiton for the hessian of the log likelihood matrix:
+https://github.com/ImVrishank/from_scratch_implementations/tree/main/images/newton's%20model/hessian%20matrix
+
+
+"""
 
 
 def NM(X,Y, learning_rate):
