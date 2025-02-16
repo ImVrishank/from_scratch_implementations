@@ -20,7 +20,7 @@ def gaussian_discriminant_analysis(X, Y, query_features):
 
     query_features = query_features.T
 
-    return (1 / (1 + np.exp(-np.dot(np.dot((mean_1 - mean_0).T, np.linalg.inv(cov)), query_features) - 0.5(np.dot(np.dot(mean_1, mean_1.T) - np.dot(mean_0, mean_0.T)), np.linalg.inv(cov)) - np.log(pi_0 / pi_1))))
+    return (1 / (1 + np.exp(-np.dot(np.dot((mean_1 - mean_0).T, np.linalg.inv(cov)), query_features) - 0.5*(np.dot(mean_1.T, (np.dot(np.linalg.inv(cov), mean_1))) - np.dot(mean_0.T, (np.dot(np.linalg.inv(cov), mean_0)))) - np.log(pi_0 / pi_1))))
 
     
 
